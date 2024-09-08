@@ -23,14 +23,14 @@ This decision is based on the following criteria:
 
 ## Consequences
 
-### Pros:
-- **Simplicity**: Provides a high level of abstraction, reducing the complexity of managing the back stack and transitions manually.
-- **Type Safety**: Generates type-safe arguments for passing data between screens, leading to more reliable code.
-- **Built-in Features**: It has built-in support for managing the back stack, animations, and transitions, and allows easy handling of deep linking.
-- **Modern & Scalable**: Works seamlessly with Jetpack Compose and can scale well as the app grows in complexity.
-- **Extensibility**: Deep linking capabilities make it easier to handle future features like external navigation.
+- Pros:
+  - **Simplicity**: Provides a high level of abstraction, reducing the complexity of managing the back stack and transitions manually.
+  - **Type Safety**: Generates type-safe arguments for passing data between screens, leading to more reliable code.
+  - **Built-in Features**: It has built-in support for managing the back stack, animations, and transitions, and allows easy handling of deep linking.
+  - **Modern & Scalable**: Works seamlessly with Jetpack Compose and can scale well as the app grows in complexity.
+  - **Extensibility**: Deep linking capabilities make it easier to handle future features like external navigation.
 
-### Cons:
-- **Learning Curve**: Requires learning the navigation graph XML structure, which may add some initial complexity.
-- **Less Customizable**: For advanced, highly customized navigation flows, this framework could feel more restrictive than a fully manual solution.
-- **Overhead for Simple Apps**: For very simple apps, the full power of the Jetpack Navigation Component may be overkill, but given the potential extensibility of this app, this is acceptable.
+- Cons:
+  - **Learning Curve**: Requires learning the navigation graph XML structure, which may add some initial complexity.
+  - **Less Customizable**: For advanced, highly customized navigation flows, this framework could feel more restrictive than a fully manual solution.
+  - **Overhead for Simple Apps**: For very simple apps, the full power of the Jetpack Navigation Component may be overkill, but given the potential extensibility of this app, this is acceptable.

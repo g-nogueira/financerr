@@ -23,14 +23,14 @@ This decision is based on the following criteria:
 
 ## Consequences
 
-### Pros:
-- **Automatic UI Updates**: The UI automatically reflects state changes without requiring manual intervention, reducing the risk of errors.
-- **Immutability**: Encourages immutability, leading to more predictable and easier-to-maintain code.
-- **Reactive Design**: Supports a reactive and event-driven approach, enhancing scalability and maintainability.
-- **Seamless Integration**: Works well with Jetpack Compose, leveraging its modern features and ensuring a smooth development experience.
-- **Official Support**: Backed by Google, providing reliability and ongoing updates.
+- Pros:
+  - **Automatic UI Updates**: The UI automatically reflects state changes without requiring manual intervention, reducing the risk of errors.
+  - **Immutability**: Encourages immutability, leading to more predictable and easier-to-maintain code.
+  - **Reactive Design**: Supports a reactive and event-driven approach, enhancing scalability and maintainability.
+  - **Seamless Integration**: Works well with Jetpack Compose, leveraging its modern features and ensuring a smooth development experience.
+  - **Official Support**: Backed by Google, providing reliability and ongoing updates.
 
-### Cons:
-- **Learning Curve**: Developers unfamiliar with reactive programming and **StateFlow** may face a learning curve.
-- **Overhead**: Managing state with **StateFlow** introduces some overhead compared to simpler state management solutions.
-- **Complexity**: The added complexity of **StateFlow** might be unnecessary for very simple state management needs, but this is offset by the benefits of using a modern and scalable approach.
+- Cons:
+  - **Learning Curve**: Developers unfamiliar with reactive programming and **StateFlow** may face a learning curve.
+  - **Overhead**: Managing state with **StateFlow** introduces some overhead compared to simpler state management solutions.
+  - **Complexity**: The added complexity of **StateFlow** might be unnecessary for very simple state management needs, but this is offset by the benefits of using a modern and scalable approach.
