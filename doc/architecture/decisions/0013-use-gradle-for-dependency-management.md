@@ -1,6 +1,6 @@
 # 13. Use Gradle for Dependency Management
 
-Date: 2024-09-08
+Date: 2025-01-11
 
 ## Status
 
@@ -23,13 +23,13 @@ This decision is based on the following criteria:
 
 ## Consequences
 
-- Pros:
+- **Pros:**
   - **Official Tool**: Gradle is the officially supported build and dependency management tool for Android, ensuring compatibility and support.
   - **Integration**: Seamless integration with Android Studio, providing a streamlined development experience.
   - **Flexibility**: Highly customizable build configurations, which can be tailored to meet specific project needs.
   - **Community Support**: Strong community support and extensive documentation available for troubleshooting and guidance.
   - **Performance**: Features like incremental builds and build cache help in managing build times and efficiency.
 
-- Cons:
+- **Cons:**
   - **Complexity**: Gradle can become complex for larger projects with many dependencies, requiring careful management of configurations.
   - **Learning Curve**: Initial setup and configuration may have a learning curve, especially for developers new to Gradle.

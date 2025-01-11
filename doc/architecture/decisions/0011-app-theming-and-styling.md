@@ -1,6 +1,6 @@
 # 11. App Theming and Styling
 
-Date: 2024-09-08
+Date: 2025-01-11
 
 ## Status
 
@@ -24,13 +24,13 @@ We will use the following theming and styling approach for the app:
 
 ## Consequences
 
-- Pros:
+- **Pros:**
   - **Modern Design**: Material You and the use of round corners align with current design trends, making the app feel contemporary and user-friendly.
   - **Flexibility**: Dark and light mode support provides a better user experience in different lighting conditions.
   - **Simplicity**: Default styles and minimal animations reduce the development time and complexity.
   - **Consistency**: A focus on primary, secondary, and accent colors helps create a coherent and intuitive UI.
 
-- Cons:
+- **Cons:**
   - **Limited Customization**: Using default styles and minimal animations might limit the uniqueness of the app’s look and feel.
   - **Design Refinement**: Further design improvements might be necessary in V2 based on user feedback and evolving design trends.
   - **Potential Lack of Depth**: The absence of shadows may make the UI look less dynamic compared to apps that use more detailed design elements.

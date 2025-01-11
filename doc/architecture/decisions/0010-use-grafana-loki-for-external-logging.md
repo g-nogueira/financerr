@@ -1,6 +1,6 @@
 # 10. Use Grafana Loki for External Logging
 
-Date: 2024-09-08
+Date: 2025-01-11
 
 ## Status
 
@@ -8,7 +8,7 @@ Accepted
 
 ## Context
 
-We need a solution to send logs outside the device for better monitoring and analysis. The solution should support different log levels, integrate easily with the chosen local logging tool (Timber), and provide a way to monitor the app's performance and errors remotely. Since I have prior experience using Splunk, we looked for an alternative that offers similar functionality with a free plan.
+We need a solution to send logs outside the device for better monitoring and analysis. The solution should support different log levels, integrate easily with the chosen local logging tool (logger), and provide a way to monitor the app's performance and errors remotely. Since I have prior experience using Splunk, we looked for an alternative that offers similar functionality with a free plan.
 
 ## Decision
 
@@ -16,7 +16,7 @@ We will use **Grafana Loki** as the external logging solution for this project.
 
 This decision is based on the following criteria:
 - **Cost-effective**: Grafana Loki is free and open-source, and we can use the Grafana Cloud free tier or self-host it for external logging.
-- **Seamless Integration with Timber**: Grafana Loki can be integrated with Timber using custom trees, allowing us to send logs to the cloud.
+- **Seamless Integration with logger**: Grafana Loki can be integrated with logger using custom handlers, allowing us to send logs to the cloud.
 - **Log aggregation**: Loki provides efficient log aggregation and monitoring capabilities, similar to Splunk, making it easier to track issues and analyze app performance.
 
 ## Consequences
@@ -28,5 +28,5 @@ This decision is based on the following criteria:
   - **Cloud Integration**: Using Grafana Cloud allows for hassle-free cloud-based log storage and analysis.
 
 - Cons:
-  - **Setup complexity**: Some additional setup is required to integrate Loki with Timber, especially if self-hosting is chosen.
+  - **Setup complexity**: Some additional setup is required to integrate Loki with logger, especially if self-hosting is chosen.
   - **Requires an external service**: Cloud-based solutions introduce a dependency on internet connectivity for external logging, but local logging will still work when offline.
