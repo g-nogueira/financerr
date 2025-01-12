@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/app_provider.dart';
-import '../models/user.dart';
-import '../models/planned_expense.dart';
-import '../models/income.dart';
 import 'edit_income_screen.dart';
 
 class HomeScreen extends StatelessWidget {

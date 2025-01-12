@@ -6,7 +6,7 @@ import '../providers/app_provider.dart';
 class EditPlannedExpenseScreen extends StatefulWidget {
   final PlannedExpense? expense;
 
-  const EditPlannedExpenseScreen({Key? key, this.expense}) : super(key: key);
+  const EditPlannedExpenseScreen({super.key, this.expense});
 
   @override
   _EditPlannedExpenseScreenState createState() => _EditPlannedExpenseScreenState();

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/app_provider.dart';
-import '../models/planned_expense.dart';
 import 'edit_planned_expense_screen.dart';
 
 class PlannedExpensesScreen extends StatelessWidget {
