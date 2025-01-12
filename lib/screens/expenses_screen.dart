@@ -19,7 +19,7 @@ class PlannedExpensesScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final expense = appProvider.plannedExpenses[index];
               return ListTile(
-                title: Text(expense.expenseCategory),
+                title: Text(expense.expenseCategory ?? 'null value'),
                 subtitle: Text(expense.valuePlanned.toString()),
               );
             },
@@ -32,8 +32,9 @@ class PlannedExpensesScreen extends StatelessWidget {
             id: '1',
             userId: '1',
             expenseCategory: 'Groceries',
+            description: 'Groceries',
             valuePlanned: 100.0,
-            expenseDay: DateTime.now(),
+            expenseDayOfTheMonth: 1,
             canFluctuate: false,
             paymentMethod: 'Credit Card',
           );

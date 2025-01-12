@@ -2,7 +2,7 @@ class Income {
   final String id;
   final String userId;
   final double value;
-  final DateTime incomeDay;
+  final int incomeDay;
 
   Income({
     required this.id,
@@ -16,7 +16,7 @@ class Income {
       'id': id,
       'user_id': userId,
       'value': value,
-      'income_day': incomeDay.toIso8601String(),
+      'income_day': incomeDay,
     };
   }
 
@@ -25,7 +25,7 @@ class Income {
       id: map['id'],
       userId: map['user_id'],
       value: map['value'],
-      incomeDay: DateTime.parse(map['income_day']),
+      incomeDay: map['income_day'],
     );
   }
 }

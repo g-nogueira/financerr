@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final expense = appProvider.plannedExpenses[index];
                     return ListTile(
-                      title: Text(expense.expenseCategory),
+                      title: Text(expense.expenseCategory ?? "null value"),
                       subtitle: Text(expense.valuePlanned.toString()),
                     );
                   },
@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                     final income = appProvider.incomes[index];
                     return ListTile(
                       title: Text(income.value.toString()),
-                      subtitle: Text(income.incomeDay.toIso8601String()),
+                      subtitle: Text(income.incomeDay.toString()),
                     );
                   },
                 ),
@@ -58,11 +58,23 @@ class HomeScreen extends StatelessWidget {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/expenses');
-        },
-        child: Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/expenses');
+            },
+            child: Icon(Icons.add),
+          ),
+          SizedBox(height: 10),
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/simulations');
+            },
+            child: Icon(Icons.show_chart),
+          ),
+        ],
       ),
     );
   }

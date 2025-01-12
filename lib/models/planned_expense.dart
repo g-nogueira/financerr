@@ -1,9 +1,10 @@
 class PlannedExpense {
   final String id;
   final String userId;
-  final String expenseCategory;
+  final String? expenseCategory;
+  final String description;
   final double valuePlanned;
-  final DateTime expenseDay;
+  final int expenseDayOfTheMonth;
   final bool canFluctuate;
   final String paymentMethod;
 
@@ -11,8 +12,9 @@ class PlannedExpense {
     required this.id,
     required this.userId,
     required this.expenseCategory,
+    required this.description,
     required this.valuePlanned,
-    required this.expenseDay,
+    required this.expenseDayOfTheMonth,
     required this.canFluctuate,
     required this.paymentMethod,
   });
@@ -23,7 +25,7 @@ class PlannedExpense {
       'user_id': userId,
       'expense_category': expenseCategory,
       'value_planned': valuePlanned,
-      'expense_day': expenseDay.toIso8601String(),
+      'expense_day_of_the_month': expenseDayOfTheMonth,
       'can_fluctuate': canFluctuate ? 1 : 0,
       'payment_method': paymentMethod,
     };
@@ -34,8 +36,9 @@ class PlannedExpense {
       id: map['id'],
       userId: map['user_id'],
       expenseCategory: map['expense_category'],
+      description: map['description'],
       valuePlanned: map['value_planned'],
-      expenseDay: DateTime.parse(map['expense_day']),
+      expenseDayOfTheMonth: map['expense_day_of_the_month'],
       canFluctuate: map['can_fluctuate'] == 1,
       paymentMethod: map['payment_method'],
     );
