@@ -20,4 +20,9 @@ class PlannedExpenseDao {
       return PlannedExpense.fromMap(maps[i]);
     });
   }
+
+  Future<void> updatePlannedExpense(PlannedExpense plannedExpense) async {
+    final db = await _databaseService.database;
+    await db.update('PLANNED_EXPENSE', plannedExpense.toMap(), where: 'id = ?', whereArgs: [plannedExpense.id]);
+  }
 }

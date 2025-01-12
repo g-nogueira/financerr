@@ -23,6 +23,12 @@ class AppProvider with ChangeNotifier {
   List<Income> _incomes = [];
   List<Income> get incomes => _incomes;
 
+  AppProvider() {
+    loadUsers();
+    loadPlannedExpenses();
+    loadIncomes();
+  }
+
   Future<void> loadUsers() async {
     _users = await _userDao.getUsers();
     notifyListeners();
@@ -40,6 +46,11 @@ class AppProvider with ChangeNotifier {
 
   Future<void> addPlannedExpense(PlannedExpense plannedExpense) async {
     await _plannedExpenseDao.insertPlannedExpense(plannedExpense);
+    await loadPlannedExpenses();
+  }
+
+  Future<void> updatePlannedExpense(PlannedExpense plannedExpense) async {
+    await _plannedExpenseDao.updatePlannedExpense(plannedExpense);
     await loadPlannedExpenses();
   }
 
