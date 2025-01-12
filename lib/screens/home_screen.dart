@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/app_provider.dart';
 import '../models/user.dart';
+import '../models/planned_expense.dart';
+import '../models/income.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,28 +16,51 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Consumer<AppProvider>(
         builder: (context, appProvider, child) {
-          return ListView.builder(
-            itemCount: appProvider.users.length,
-            itemBuilder: (context, index) {
-              final user = appProvider.users[index];
-              return ListTile(
-                title: Text(user.name),
-                subtitle: Text(user.email),
-              );
-            },
+          return Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: appProvider.users.length,
+                  itemBuilder: (context, index) {
+                    final user = appProvider.users[index];
+                    return ListTile(
+                      title: Text(user.name),
+                      subtitle: Text(user.email),
+                    );
+                  },
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: appProvider.plannedExpenses.length,
+                  itemBuilder: (context, index) {
+                    final expense = appProvider.plannedExpenses[index];
+                    return ListTile(
+                      title: Text(expense.expenseCategory),
+                      subtitle: Text(expense.valuePlanned.toString()),
+                    );
+                  },
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: appProvider.incomes.length,
+                  itemBuilder: (context, index) {
+                    final income = appProvider.incomes[index];
+                    return ListTile(
+                      title: Text(income.value.toString()),
+                      subtitle: Text(income.incomeDay.toIso8601String()),
+                    );
+                  },
+                ),
+              ),
+            ],
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          final newUser = User(
-            id: '1',
-            name: 'John Doe',
-            email: 'john.doe@example.com',
-            createdAt: DateTime.now(),
-            isActive: true,
-          );
-          context.read<AppProvider>().addUser(newUser);
+          Navigator.pushNamed(context, '/expenses');
         },
         child: Icon(Icons.add),
       ),

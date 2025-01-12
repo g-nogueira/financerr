@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'screens/home_screen.dart';
+import 'screens/expenses_screen.dart';
 import 'services/service_locator.dart';
 import 'providers/app_provider.dart';
 
@@ -24,6 +25,9 @@ class Financerr extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: HomeScreen(),
+        routes: {
+          '/expenses': (context) => PlannedExpensesScreen(),
+        },
       ),
     );
   }
