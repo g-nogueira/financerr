@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:financerr/screens/home_screen.dart';
-import 'package:financerr/services/service_locator.dart';
+import 'package:provider/provider.dart';
+import 'screens/home_screen.dart';
+import 'services/service_locator.dart';
+import 'providers/app_provider.dart';
 
 void main() {
   setupLocator();
@@ -12,12 +14,17 @@ class Financerr extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Financerr',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Financerr',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: HomeScreen(),
       ),
-      home: HomeScreen(),
     );
   }
 }
