@@ -63,4 +63,9 @@ class AppProvider with ChangeNotifier {
     await _incomeDao.insertIncome(income);
     await loadIncomes();
   }
+
+  Future<void> updateIncome(Income income) async {
+    await _incomeDao.updateIncome(income);
+    await loadIncomes();
+  }
 }

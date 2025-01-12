@@ -20,4 +20,9 @@ class IncomeDao {
       return Income.fromMap(maps[i]);
     });
   }
+
+  Future<void> updateIncome(Income income) async {
+    final db = await _databaseService.database;
+    await db.update('INCOME', income.toMap(), where: 'id = ?', whereArgs: [income.id]);
+  }
 }

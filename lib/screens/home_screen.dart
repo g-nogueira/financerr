@@ -4,6 +4,7 @@ import '../providers/app_provider.dart';
 import '../models/user.dart';
 import '../models/planned_expense.dart';
 import '../models/income.dart';
+import 'edit_income_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,6 +51,14 @@ class HomeScreen extends StatelessWidget {
                     return ListTile(
                       title: Text(income.value.toString()),
                       subtitle: Text(income.incomeDay.toString()),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditIncomeScreen(income: income),
+                          ),
+                        );
+                      },
                     );
                   },
                 ),
